@@ -1,0 +1,14 @@
+show=drun
+width=500
+height=200
+always_parse_args=true
+show_all=false
+prompt=Enter search...
+term=kitty
+hide_scroll=true
+print_command=true
+allow_images=true
+insensitive=true
+columns=4
+fork=true
+no_actions=true
