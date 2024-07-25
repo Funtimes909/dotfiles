@@ -5,11 +5,13 @@ region_capture() {
 }
 
 active_capture() {
-	hyprshot -s -m window -o $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/ -f $(date +%I)-$(date +%M)-$(date +%S).png -z
+	POS="$(hyprctl activewindow | grep -i "at:" | awk '{print $2}' | xargs)"
+	SIZE="$(hyprctl activewindow | grep -i "size:" | awk '{print $2}' | xargs | sed -e s/,/x/g)"
+	grim -l 9 -g "${POS} ${SIZE}" $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/$(date +%I)-$(date +%M)-$(date +%S).png
 }
 
 output_capture() {
-	hyprshot -s -m output -o $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/ -f $(date +%I)-$(date +%M)-$(date +%S).png -z
+	grim -g "0,0 1920x1080" -l 9 $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/$(date +%I)-$(date +%M)-$(date +%S).png
 }
 
 if [[ "$1" == "--region" ]]; then

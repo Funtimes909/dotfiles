@@ -18,12 +18,19 @@ window#waybar {
     background-color: transparent;
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: 1px;
-    border-radius: 10px;
+#workspaces button {
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    border-width: 0px;
+    color: #11111b;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    border-radius: 3px;
+    background: transparent;
+    color: #11111b;
+    border-bottom: solid transparent;
 }
 
 #workspaces button:hover {
@@ -33,51 +40,49 @@ button {
 #workspaces button.focused {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
+    padding: 0px 0px 0px 0px;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#privacy {
-    color: @crust;
-    background: linear-gradient(320deg, rgba(249,102,143,1) 0%, rgba(137,180,250,1) 100%);
-    border-color: @crust;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 5px;            
-    margin: 7px 1px 7px 1px;
-}
-
 #clock,
-#workspaces,
 #network,
 #tray,
 #wireplumber,
-#mpris,
 #cpu,
-#disk,
-#temperature,
+#battery,
 #memory {
-    color: @crust;
-    /* background: linear-gradient(320deg, rgba(249,102,143,1) 0%, rgba(137,180,250,1) 100%); */ 
-    /* background: linear-gradient(90deg, rgba(245,194,231,1) 0%, rgba(235,160,172,1) 35%, rgba(180,190,254,1) 100%); */
+    color: #11111b;
     background: linear-gradient(90deg, rgba(242,205,205,1) 0%, rgba(245,194,231,1) 35%, rgba(180,190,254,1) 100%);
-    border-color: @crust;
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 5px;
+    border: solid 3px #11111b;
+    border-radius: 3px;
     padding: 0px 15px 0px 15px;
     margin: 7px 1px 7px 1px;
 }
 
-#workspaces button {
-    padding: 0px 10px 0px 10px;
-    color: @crust;
+#workspaces {
+    color: #11111b;
+    background: linear-gradient(90deg, rgba(242,205,205,1) 0%, rgba(245,194,231,1) 35%, rgba(180,190,254,1) 100%);
+    border: solid 3px #11111b;
+    padding: 0px 5px 0px 5px;
+    margin: 1px 1px 1px 1px;    
 }
+
 #cpu.critical,
 #memory.critcal,
-#temperature.critical {
+#battery.critical {
+    animation-name: critcal;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu.warning,
+#memory.warning,
+#battery.warning {
     animation-name: warning;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -87,7 +92,7 @@ button {
 
 #window,
 #workspaces {
-    margin: 0 4px;
+    margin: 0 1px;
 }
 
 #privacy-item {
@@ -102,10 +107,18 @@ button {
 }
 
 /* Define a flasing red animation */
-@keyframes warning {
+@keyframes critical {
     to {
         color: #11111b;
         color: #ff0000;
+    }
+}
+
+/* Define a flashing orange animation */
+@keyframes warning {
+    to {
+        color: #11111b;
+        color: #FF5500;
     }
 }
 
