@@ -2,6 +2,7 @@
   "layer": "top",
   "height": 44,
   "spacing": 1,
+  "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
   ],
@@ -55,10 +56,10 @@
   "battery": {
     "interval": 1,
     "format": "<b>{icon} {capacity}%</b>",
-    "tooltip-format": "<b>{power}</b>",
-	"format-icons": ["", "", "", "", ""],
-    "max-length": 25,
-	"states": {
+    "tooltip-format": "{time} remaining",
+    "format-time": "{H}h {M} mins",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
 		"warning": 25,
         "critical": 10
     },
@@ -90,7 +91,7 @@
   
   "wireplumber": {
     "format": "{icon} <b>{volume}%</b>",
-    "format-muted": " <b>{volume}%</b>",
+    "format-muted": " <b>0%</b>",
     "on-click": "pamixer -t",
     "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-",
@@ -103,35 +104,17 @@
     "format": "<b>{ifname}</b>",
     "format-wifi": " <b>{essid}</b> ",
     "format-ethernet": "  <b>{bandwidthDownBytes}</b>",
-    "format-disconnected": "<b>None</b>",
+    "format-disconnected": "", // Hide module if disconnected
     "tooltip-format": "{essid} 󰊗",
     "tooltip-format-wifi": "{essid} ",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
-    "on-left-click": "nm-applet",
+    "on-click": "nm-applet",
     "max-length": 24
   },
   
-  "mpris": {
-    "format": "{player_icon} ~~ <b> {title} </b> ~~ {artist}",
-    "format-paused": "{status_icon} ~~ <i> {title} </i> ~~ {artist}",
-    "format-tooltip": "{player}: {title} - {artist} {album}",
-    "max-length": 48,
-    "on-click-backward": "playerctl previous",
-    "on-right-click": "",
-    "on-click-forward": "playerctl next",
-    "on-scroll-up": "playerctl volume 0.05+",
-    "on-scroll-down": "playerctl volume 0.05-",
-    "player-icons": {
-      "default": "▶",
-      "mpv": "🎵"
-    },
-    "status-icons": {
-      "paused": "⏸"
-    }
-  },
-  
   "hyprland/workspaces": {
+    
     "on-click": "activate",
     "sort-by-number": true
   }

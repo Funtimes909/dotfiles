@@ -5,6 +5,14 @@ plugins = ["scratchpads"]
 command = "kitty -c $HOME/.config/hypr/kitty.conf --class kitty-dropdown"
 title = "Dropdown Terminal"
 postition = "50% 0%"
-class = "kity-dropdown"
+class = "kitty-dropdown"
+size = "80% 80%"
+animation = "fromTop"
+
+[scratchpads.spotify]
+command = "spotify"
+title = "Dropdown Spotify"
+postition = "50% 0%"
+class = "kitty-dropdown"
 size = "80% 80%"
 animation = "fromTop"

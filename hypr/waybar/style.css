@@ -1,6 +1,7 @@
 @import "colors.css"; /* Import colors stylesheet */
 
 * {
+    min-height: 10px;
     font-family: JetBrains Mono, monospace; /* I'm a sucker for JetBrains Mono */
     font-size: 12px;
 }
@@ -18,35 +19,24 @@ window#waybar {
     background-color: transparent;
 }
 
-#workspaces button {
-    padding: 0px 0px 0px 0px;
-    margin: 0px;
-    border-width: 0px;
-    color: #11111b;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    border-radius: 3px;
-    background: transparent;
-    color: #11111b;
-    border-bottom: solid transparent;
-}
-
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button {
+    padding: 0px 5px 0px 5px;
 }
 
 #workspaces button.focused {
     background-color: #64727D;
     box-shadow: inset 0 -3px #ffffff;
-    padding: 0px 0px 0px 0px;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
+#workspaces,
 #clock,
 #network,
 #tray,
@@ -60,14 +50,6 @@ window#waybar {
     border-radius: 3px;
     padding: 0px 15px 0px 15px;
     margin: 7px 1px 7px 1px;
-}
-
-#workspaces {
-    color: #11111b;
-    background: linear-gradient(90deg, rgba(242,205,205,1) 0%, rgba(245,194,231,1) 35%, rgba(180,190,254,1) 100%);
-    border: solid 3px #11111b;
-    padding: 0px 5px 0px 5px;
-    margin: 1px 1px 1px 1px;    
 }
 
 #cpu.critical,
@@ -90,8 +72,7 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#window,
-#workspaces {
+#window {
     margin: 0 1px;
 }
 
@@ -99,7 +80,7 @@ window#waybar {
     margin: 2px;
     padding: 0px 4px;
     border-radius: 2px;
-    color:white;
+    color: white;
 }
 
 .modules-left > widget:first-child > #workspaces {
