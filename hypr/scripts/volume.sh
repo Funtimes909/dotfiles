@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-iDIR="/home/funtimes909/.config/hypr/icons/HyprV4/HyprV/mako/icons"
+iDIR="/home/funtimes909/.config/hypr/icons"
 
 # Get Volume
 get_volume() {
@@ -24,7 +24,8 @@ get_icon() {
 
 # Notify
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume : $(get_volume) %"
+	volume=$(pamixer --get-volume)
+	notify-send -a "Volume" -h string:x-canonical-private-synchronous:sys-notify -h int:value:${volume} -u low -i "$(get_icon)" "Volume : $(get_volume) %"
 }
 
 # Increase Volume

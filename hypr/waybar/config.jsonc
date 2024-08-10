@@ -1,126 +1,116 @@
 {
-    "layer": "top",
-    "height": 44,
-    "spacing": 1,
-    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
-    "modules-center": ["memory", "cpu", "temperature"],
-    "modules-right": ["mpris", "privacy", "network", "tray", "wireplumber", "clock"],
-
-    "clock": {
-	"format-alt": "<b>{:%I:%M:%S}</b>  ",
-        "format": "<b>{:%A, %B %d, %Y %I:%M:%S}</b>",
-	"interval": 1,
-	},
-
-    "privacy": {
-	"icon-spacing": 4,
-	"icon-size": 16,
-	"transition-duration": 250,
-	"modules": [
-		{
-			"type": "screenshare",
-			"tooltip": true,
-			"tooltip-icon-size": 16
-		},
-		{
-			"type": "audio-in",
-			"tooltip": true,
-			"tooltip-icon-size": 16
-		}
-	]
-	},
-
-    "temperature": {
-	"critical-threshold": 85,
-	"format-critical": " <b>{temperatureC}°C</b>",
-	"format": " <b>{temperatureC}°C</b>",
-	"interval": 5,
-	"thermal-zone": 1
-	},
-    
-    "tray": {
-	"icon-size": 16,
-	"spacing": 8,
-	"show-passive-items": true
-	},
-
-    "cpu": {
-	"format": " <b>{usage}%</b>",
-	"interval": 1,
-        "states": {
-            "warning": 80,
-            "critical": 90
-    },
-	},
-
-    "memory": {
-	"format": " <b>{percentage}%</b>",
-	"interval": 1,
-	 "states": {
-            "warning": 80,
-            "critical": 90
-    },
-	},
-
-    "wireplumber": {
-	"format": "{icon} <b>{volume}%</b>",
-	"format-muted": " <b>0%</b>",
-	"on-click": "pamixer -t",
-	"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
-	"on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-",
-	"format-icons": ["", "", ""],
-	"max-volume": 100
-	},
-
-    "network": {
-        "interface": "enp6s0",
-	"format": "{ifname}",
-	"format-wifi": "{essid} ({signalStrength}%) ",
-	"format-ethernet": "  <b>{bandwidthDownBytes}</b>",
-	"format-disconnected": "", //An empty format will hide the module.
-	"tooltip-format": "{ifname} via {gwaddr} 󰊗",
-	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-	"tooltip-format-ethernet": "{ifname} ",
-	"tooltip-format-disconnected": "Disconnected",
-	"max-length": 20
-	},
-
-    "mpris": {
-	"format": "{player_icon} ~~ <b> {title} </b> ~~ {artist}",
-	"format-paused": "{status_icon} ~~ <i> {title} </i> ~~ {artist}",
-	"format-tooltip": "{player}: {title} - {artist} {album}",
-	"max-length": 48,
-	"on-click-backward": "playerctl previous",
-	"on-right-click": "",
-	"on-click-forward": "playerctl next",
-	"on-scroll-up": "playerctl volume 0.05+",
-	"on-scroll-down": "playerctl volume 0.05-",	
-	"player-icons": {
-		"default": "▶",
-		"mpv": "🎵"
-	},
-	"status-icons": {
-		"paused": "⏸"
-	},
-	},
-
-    "hyprland/workspaces": {
-	"on-click": "activate",
-  	"sort-by-number": true
-	},
-
-    "wlr/taskbar": {
-	"format": "{icon}",
-	"icon-size": 32,
-	"tooltip-format": "{title}",
-	"on-click": "activate",
-	"on-click-middle": "close",
-	"ignore-list": [
-	    "Alacritty"
-    ],
-    "rewrite": {
-        "Firefox Web Browser": "Firefox",
-        "Foot Server": "Terminal"
+  "layer": "top",
+  "height": 44,
+  "spacing": 1,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "memory",
+    "cpu",
+    "temperature"
+  ],
+  "modules-right": [
+    "mpris",
+    "privacy",
+    "network",
+    "tray",
+    "wireplumber",
+    "clock"
+  ],
+  "clock": {
+    "format-alt": "<b>{:%I:%M:%S}</b>  ",
+    "format": "<b>{:%A, %B %d, %Y %I:%M:%S}</b> ",
+    "interval": 1
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 16,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 16
+      }
+    ]
+  },
+  "temperature": {
+    "critical-threshold": 85,
+    "format-critical": " <b>{temperatureC}°C</b>",
+    "format": " <b>{temperatureC}°C</b>",
+    "interval": 5,
+    "thermal-zone": 1
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8,
+    "show-passive-items": true
+  },
+  "cpu": {
+    "format": " <b>{usage}%</b>",
+    "interval": 1,
+    "states": {
+      "warning": 80,
+      "critical": 90
     }
-}
+  },
+  "memory": {
+    "format": " <b>{percentage}%</b>",
+    "interval": 1,
+    "states": {
+      "warning": 80,
+      "critical": 90
+    }
+  },
+  "wireplumber": {
+    "format": "{icon} <b>{volume}%</b>",
+    "format-muted": " <b>{volume}%</b>",
+    "on-click": "pamixer -t",
+    "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-",
+    "max-volume": 100,
+    "format-icons": ["", "", ""]
+  },
+  "network": {
+    "interface": "enp6s0",
+    "format": "<b>{ifname}</b>",
+    "format-wifi": " <b>{essid}</b> ",
+    "format-ethernet": "  <b>{bandwidthDownBytes}</b>",
+    "format-disconnected": "<b>None</b>",
+    "tooltip-format": "{essid} 󰊗",
+    "tooltip-format-wifi": "{essid} ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-left-click": "nm-applet",
+    "interval": 1,
+    "max-length": 11
+  },
+  "mpris": {
+    "format": "{player_icon} ~~ <b>{title}</b> ~~ {artist}",
+    "format-paused": "{status_icon} ~~ <i>{title}</i> ~~ {artist}",
+    "format-tooltip": "{player}: {title} - {artist} {album}",
+    "max-length": 48,
+    "on-click-backward": "playerctl previous",
+    "on-right-click": "",
+    "on-click-forward": "playerctl next",
+    "on-scroll-up": "playerctl volume 0.05+",
+    "on-scroll-down": "playerctl volume 0.05-",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    }
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true
+  }
 }

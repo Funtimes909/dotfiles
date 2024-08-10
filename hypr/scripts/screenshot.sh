@@ -1,21 +1,29 @@
 #!/usr/bin/env bash
 
+LOCATION="$HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/%I-%M-%S").png"
+
 region_capture() {
-	hyprshot -s -m region -o $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/ -f $(date +%I)-$(date +%M)-$(date +%S).png -z
+	hyprshot -m region -z -o $HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/") -f $(date +"%I-%M-%S").png
 }
 
 active_capture() {
-	hyprshot -s -m window -o $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/ -f $(date +%I)-$(date +%M)-$(date +%S).png -z
+	grimblast --cursor copysave active ${LOCATION}
+}
+
+full_capture() {
+	grim -g "0,0 6000x1440" -l 9 ${LOCATION}
 }
 
 output_capture() {
-	hyprshot -s -m output -o $HOME/Pictures/Screenshots/$(whoami)-$(date +%Y)-$(date +%m)/$(date +%d)/ -f $(date +%I)-$(date +%M)-$(date +%S).png -z
+	grimblast --cursor copysave output ${LOCATION}
 }
 
 if [[ "$1" == "--region" ]]; then
 	region_capture
 elif [[ "$1" == "--active" ]]; then
 	active_capture
-elif [[ "$1" == "--output" ]]; then
-	output_capture
+elif [[ "$1" == "--full" ]]; then
+	full_capture
+else [[ "$1" == "--output" ]];
+        output_capture
 fi

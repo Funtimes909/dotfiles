@@ -156,7 +156,6 @@ window {
   border: 0.1em solid @lavender;
   border-radius: 5px;
   margin-left: -0.1em;
-  /* ^^ I don't know why this is not included in the default repo */
 }
 
 #entry:selected #text {
