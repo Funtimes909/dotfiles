@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-LOCATION="$HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/%I-%M-%S").png"
+WINDOW=$(hyprctl activewindow | grep class | awk -F': ' '{print $2}')
+LOCATION="$HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d")/${WINDOW}-$(date +"%I-%M-%S").png"
 
 region_capture() {
 	hyprshot -m region -z -o $HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/") -f $(date +"%I-%M-%S").png
