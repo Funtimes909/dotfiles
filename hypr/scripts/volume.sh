@@ -25,7 +25,7 @@ get_icon() {
 # Notify
 notify_user() {
 	volume=$(pamixer --get-volume)
-	notify-send -a "Volume" -h string:x-canonical-private-synchronous:sys-notify -h int:value:${volume} -u low -i "$(get_icon)" "Volume : $(get_volume) %"
+	notify-send -a "Volume" -h string:x-canonical-private-synchronous:sys-notify -h int:value:${volume} -u low -i "$(get_icon)" "Volume : $(get_volume)%"
 }
 
 # Increase Volume
