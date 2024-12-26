@@ -14,7 +14,7 @@ if ! [ -d /tmp/icons ]; then
 fi
 
 pause() {
-	playerctl play-pause
+	playerctl --ignore-player=firefox play-pause
 	if [[ $(playerctl status) == "Paused" ]]; then
 		if test -f "/tmp/icons/$ALBUM_NAME"; then
 			sleep 0.01
@@ -29,28 +29,28 @@ pause() {
 
 # Increase Volume
 inc_volume() {
-	playerctl volume 0.05+
+	playerctl --ignore-player=firefox volume 0.05+
 }
 
 # Decrease Volume
 dec_volume() {
-	playerctl volume 0.05-
+	playerctl --ignore-player=firefox volume 0.05-
 }
 
 next_song() {
-	playerctl next
+	playerctl --ignore-player=firefox next
 }
 
 previous_song() {
-	playerctl previous
+	playerctl --ignore-player=firefox previous
 }
 
 forward5() {
-	playerctl position 5+
+	playerctl --ignore-player=firefox position 5+
 }
 
 back5() {
-	playerctl position 5-
+	playerctl --ignore-player=firefox position 5-
 }
 
 mute() {

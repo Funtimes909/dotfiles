@@ -18,7 +18,7 @@ active_capture() {
 }
 
 full_capture() {
-	grim -g "0,0 6000x1440" -l 9 ${LOCATION}
+	grim -g "0,0 6000x1440" ${LOCATION}
 }
 
 output_capture() {

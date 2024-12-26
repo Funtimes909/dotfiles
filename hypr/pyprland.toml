@@ -2,7 +2,7 @@
 plugins = ["scratchpads", "magnify", "lost_windows"]
 
 [scratchpads.terminal]
-command = "kitty -c $HOME/.config/hypr/kitty.conf --class kitty-dropdown"
+command = "kitty -c $HOME/.config/hypr/kitty/kitty.conf --class kitty-dropdown"
 title = "Dropdown Terminal"
 postition = "50% 0%"
 size = "80% 80%"
