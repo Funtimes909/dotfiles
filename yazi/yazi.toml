@@ -1,0 +1,28 @@
+[manager]
+sort_by = "mtime"
+sort_dir_first = true
+show_hidden = true
+
+[open]
+rules = [
+	{ mime = "text/*", use = "edit" },
+	{ mime = "video/*", use = "play" },
+	{ mime = "image/*", use = "open" },
+
+	# { mime = "application/json", use = "edit" },
+	{ name = "*.json", use = "edit" },
+
+	# Multiple openers for a single rule
+	{ name = "*.html", use = [ "open", "edit" ] },
+]
+
+[opener]
+play = [
+	{ run = 'vlc "$@"', orphan = true, for = "linux" }
+]
+edit = [
+	{ run = '$EDITOR "$@"', block = true, orphan = true, for = "linux" }
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open" },
+]
