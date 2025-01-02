@@ -2,19 +2,24 @@
 prepend_keymap = [
     # File/Directory Manipulation
     { on = ["a", "m"], run = 'create --dir', desc = "Create a directory" },
-    { on = "<F5>", run = 'rename --empty=stem --cursor=start', desc = "Rename a file"},
     { on = ["a", "s"], run = 'search --via=fd', desc = "Search" },
     { on = ["a", "c"], run = 'cd --interactive', desc = "Change Directory" },
+    { on = "<F5>", run = 'rename --empty=stem --cursor=start', desc = "Rename a file"},
     
     # Open shell
     { on = "!", run = 'shell $SHELL --block', desc = "Shell" },
     
     # Copy file to clipboard
-    { on = ["c", "c"], run = '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list'''', desc = "Copy file" },
+    { on = ["c", "c"], run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list'''', "yank" ], desc = "Copy file" },
+    { on = ["c", "x"], run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list'''', "yank --cut" ], desc = "Cut file" },
+    { on = ["c", "p"], run = 'paste', desc = "Paste file" },
     { on = ["c", "f"], run = 'copy filename', desc = "Copy filename" },
     
     # Commonly used directories
     { on = "<F1>", run = 'cd /net/server/storage/Media/Memes/', desc = "Memes" },
     { on = "<F2>", run = 'cd ~/Documents/Code/', desc = "Projects" },
-    { on = "<F3>", run = 'cd ~/', desc = "Home" },
+    { on = "h", run = 'cd', desc = "Home" },
+    
+    # Openers
+    { on = "<Enter>", run = 'open', desc = "Open a file based on its MIME type" },
 ]
