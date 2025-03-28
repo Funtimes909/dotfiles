@@ -8,7 +8,7 @@ wrap = "no"
 
 [opener]
 play = [
-	{ run = 'vlc "$@"', orphan = true, for = "linux" }
+	{ run = 'mpv "$@"', orphan = true, for = "linux" }
 ]
 
 edit = [

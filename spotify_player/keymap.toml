@@ -1,0 +1,21 @@
+[[keymaps]]
+command = "FocusNextWindow"
+key_sequence = "right"
+[[keymaps]]
+command = "FocusPreviousWindow"
+key_sequence = "left"
+[[keymaps]]
+command = "LikedTrackPage"
+key_sequence = "l"
+[[keymaps]]
+command = "LyricsPage"
+key_sequence = "g l"
+[[keymaps]]
+command = "PreviousTrack"
+key_sequence = "M-left"
+[[keymaps]]
+command = "NextTrack"
+key_sequence = "M-right"
+[[keymaps]]
+command = { VolumeChange = { offset = 1 } }
+key_sequence = "-"

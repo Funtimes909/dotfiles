@@ -18,7 +18,7 @@ prepend_keymap = [
     # Commonly used directories
     { on = "<F1>", run = 'cd /net/server/storage/Media/Memes/', desc = "Memes" },
     { on = "<F2>", run = 'cd ~/Documents/Code/', desc = "Projects" },
-    { on = "h", run = 'cd', desc = "Home" },
+    { on = "<F3>", run = 'cd ~/', desc = "Home" },
     
     # Openers
     { on = "<Enter>", run = 'open', desc = "Open a file based on its MIME type" },
