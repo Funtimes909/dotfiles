@@ -1,0 +1,11 @@
+@import "colors.css"; /* Import colors stylesheet */
+
+.clock,
+.volume {
+    color: #11111b;
+    background: linear-gradient(90deg, rgba(242,205,205,1) 0%, rgba(245,194,231,1) 35%, rgba(180,190,254,1) 100%);
+    border: solid 3px #11111b;
+    border-radius: 3px;
+    padding: 0px 15px 0px 15px;
+    margin: 7px 1px 7px 1px;
+}

@@ -1,21 +1,35 @@
 [[keymaps]]
-command = "FocusNextWindow"
-key_sequence = "right"
-[[keymaps]]
-command = "FocusPreviousWindow"
-key_sequence = "left"
-[[keymaps]]
 command = "LikedTrackPage"
 key_sequence = "l"
+
 [[keymaps]]
 command = "LyricsPage"
-key_sequence = "g l"
+key_sequence = "z"
+
 [[keymaps]]
-command = "PreviousTrack"
-key_sequence = "M-left"
+command = "Repeat"
+key_sequence = "r"
+
 [[keymaps]]
-command = "NextTrack"
-key_sequence = "M-right"
+command = "SearchPage"
+key_sequence = "s"
+
 [[keymaps]]
-command = { VolumeChange = { offset = 1 } }
+command = "SwitchDevice"
+key_sequence = "d"
+
+[[keymaps]]
+command = "ShowActionsOnSelectedItem"
+key_sequence = "a"
+
+[[keymaps]]
+command = "FocusNextWindow"
+key_sequence = "tab"
+
+[[keymaps]]
+command = { VolumeChange = { offset = 5 } }
+key_sequence = "="
+
+[[keymaps]]
+command = { VolumeChange = { offset = -5 } }
 key_sequence = "-"

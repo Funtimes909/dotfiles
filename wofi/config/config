@@ -1,6 +1,6 @@
 show=drun
-width=625
-height=300
+width=600
+height=600
 always_parse_args=true
 show_all=false
 prompt=Enter search...

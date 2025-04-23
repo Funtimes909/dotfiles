@@ -1,16 +1,13 @@
 theme = "Catppuccin-mocha"
+client_id = "58fb60b639564690b887ff1b726cc47d"
 tracks_playback_limit = 50
 playback_format = "{status} {track} • {artists}\n{album}\n{metadata}"
-notify_format = { summary = "{track} • {artists}", body = "{album}" }
-notify_timeout_in_secs = 0
 app_refresh_duration_in_ms = 16
-playback_refresh_duration_in_ms = 0
 page_size_in_rows = 32
-enable_media_control = false
+enable_media_control = true
 enable_streaming = "Always"
 enable_notify = false
 enable_cover_image_cache = true
-notify_streaming_only = false
 default_device = "spotify-player"
 play_icon = "▶"
 pause_icon = "▌▌"
@@ -22,7 +19,7 @@ seek_duration_secs = 5
 [device]
 name = "spotify-player"
 device_type = "speaker"
-volume = 75
+volume = 50
 bitrate = 320
 audio_cache = true
 normalization = false

@@ -1,0 +1,56 @@
+{
+  "name": "ironbar",
+  "position": "top",
+  "start": [
+    {
+      "type": "workspaces",
+      "all_monitors": false
+    }
+  ],
+  "center": [
+    {
+      "format": [
+        " {memory_percent:.1}% --  {cpu_percent:1}% --  {net_down@enp6s0:.2} MB/s"
+      ],
+      "interval": {
+        "cpu": 1,
+        "memory": 1,
+        "networks": 1
+      },
+      "type": "sys_info"
+    }
+  ],
+  "end": [
+    {
+      "type": "music",
+      "format": " {title} -- {artist}",
+      "truncate": {
+        "mode": "end",
+        "max_length": 40
+      },
+      "icons": {
+        "play": "",
+        "pause": ""
+      }
+    },
+    {
+      "type": "volume",
+      "format": "{icon} {percentage}%",
+      "max_volume": 100,
+      "icons": {
+        "volume_high": "",
+        "volume_medium": "",
+        "volume_low": "",
+        "muted": "󰝟"
+      }
+    },
+    {
+      "type": "tray",
+      "icon_size": 16
+    },
+    {
+      "type": "clock",
+      "format": "%a, %b %d, %I:%M:%S "
+    }
+  ]
+}
