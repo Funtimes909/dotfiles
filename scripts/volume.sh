@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-iDIR="/home/funtimes909/.config/hypr/icons"
+iDIR="$HOME/.config/hypr/icons"
 
 # Get Volume
 get_volume() {

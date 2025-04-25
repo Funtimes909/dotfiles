@@ -50,7 +50,7 @@
     },
     {
       "type": "clock",
-      "format": "%a, %b %d, %I:%M:%S "
+      "format": "%a, %b %d, %I:%M:%S  "
     }
   ]
 }
