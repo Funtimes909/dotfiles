@@ -1,7 +1,7 @@
 # See dunst(5) for all configuration options
 
 [global]
-    frame_color = "#89b4fa"
+    frame_color = "#cba6f7"
     separator_color= frame 
 
    ### Display ###
@@ -106,7 +106,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#11111b"
+    frame_color = "#cba6f7"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border

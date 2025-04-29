@@ -10,7 +10,7 @@ region_capture() {
 
 region_capture_edit() {
         TIME="$(date +"%I-%M-%S").png"
-        hyprshot -m region -z -o $HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/") -f $TIME; krita $HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/")$TIME
+        hyprshot -s -m region -z -o $HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/") -f $TIME; krita $HOME/Pictures/Screenshots/$(whoami)-$(date +"%Y-%m/%d/")$TIME
 }
 
 active_capture() {
